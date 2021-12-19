@@ -1,0 +1,2220 @@
+openapi: 3.0.0
+info:
+  title: real estate syria
+  description: A site to facilitate searches for buying and renting various properties, depending on the search engine and recommendation system
+  version: 1.0.0
+  contact: {}
+  x-codegen-settings:
+    Nullify404: false
+    GenerateAsyncCode: true
+    UseMethodPrefix: false
+    UseModelPostfix: false
+    UseControllerPrefix: true
+    UseEnumPostfix: true
+    CollectParameters: false
+    UseConstructorsForConfig: false
+    UseCommonSDKLibrary: false
+    iOSUseAppInfoPlist: false
+    AndroidUseAppManifest: false
+    BodySerialization: 0
+    EnableAdditionalModelProperties: false
+    PreserveParameterOrder: true
+    AppendContentHeaders: true
+    iOSGenerateCoreData: false
+    GenerateInterfaces: false
+    NodeHttpClient: NODE_REQUEST
+    ValidateRequiredParameters: false
+    JavaUsePropertiesConfig: false
+    Timeout: 0
+    StoreTimezoneInformation: false
+    EnablePHPComposerVersionString: false
+    EnableLogging: false
+    ArraySerialization: Indexed
+    ModelSerializationScheme: Json
+    UseExceptionPrefix: true
+    RunscopeEnabled: false
+    AndroidHttpClient: ANDROID_OK
+    ObjCHttpClient: UNIREST
+    CSharpHttpClient: UNIREST
+    PHPHttpClient: UNIREST
+    JavaHttpClient: JAVA_OK
+    ParameterArrayFormat: ParamArrayWithIndex
+    SecurityProtocols:
+      - Ssl3
+      - Tls
+    GenerateTravisConfig: false
+    GenerateCircleConfig: false
+    GenerateAppveyorConfig: false
+    GenerateJenkinsConfig: false
+    EnableHttpCache: false
+    Retries: 0
+    RetryInterval: 1
+    GenerateAdvancedDocs: true
+    UnderscoreNumbers: true
+    UseSingletonPattern: true
+    DisableLinting: false
+    ApplyCustomizations: []
+    SortResources: false
+    AllowSkippingSSLCertVerification: false
+    DoNotSplitWords: []
+    EnableGlobalUserAgent: true
+    ReturnCompleteHttpResponse: false
+    GenerateModels: true
+    GenerateExceptions: true
+    IgnoreIfNullJson: false
+    DisableDocs: false
+    LiftParameterDescriptionFromCustomType: false
+    ThrowForHttpErrorStatusCodes: true
+    ResponseMapping:
+      Type: Simple
+    ForceKeywordArgsInRuby: false
+    SymbolizeHashKeysInRuby: false
+    UsageExampleEndpoint:
+      Description: ""
+      EndpointGroupName: ""
+      EndpointName: ""
+    IsLatestVersion: false
+    EnableImmutableModels: false
+    GenerateEnums: true
+    BackoffFactor: 2
+    StatusCodesToRetry:
+      - 408
+      - 413
+      - 429
+      - 500
+      - 502
+      - 503
+      - 504
+      - 521
+      - 522
+      - 524
+    RequestMethodsToRetry:
+      - GET
+      - PUT
+    UserConfigurableRetries: true
+    UseEndpointMethodName: false
+    EncodeTemplateParameters: true
+    GenerateExamplesForOptionalFields: false
+    MultitargetDotnetVersions: false
+    BackoffMax: 0
+    RetryOnTimeout: true
+  x-server-configuration:
+    default-environment: production
+    default-server: Server 1
+    environments:
+      - name: production
+        servers:
+          - name: Server 1
+            url: http://localhost:3002
+    parameters: []
+  x-image-uri: ""
+servers:
+  - url: http://localhost:3002
+    description: Test Server (localhost)
+    variables: {}
+paths:
+  /auth/signup:
+    post:
+      tags:
+        - Auth
+      summary: SignUp
+      operationId: SignUp
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignUpRequest"
+            example:
+              email: test_user@gmail.com
+              password: "123456789"
+              firstName: test
+              lastName: user
+              gender: 60af8d2fee989ddbe8ea5761
+              region: 60c21bdb45e42dc6d2e1fd38
+              birthday: 1997-01-01
+              photo: /images/test_image.png
+              phone: 00963963963963
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/signup
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com",
+
+                "password": "123456789",
+
+                "firstName": "test",
+
+                "lastName": "user",
+
+                "gender": "60af8d2fee989ddbe8ea5761",
+
+                "region": "60c21bdb45e42dc6d2e1fd38",
+
+                "birthday": "1997-01-01",
+
+                "photo": "/images/test_image.png",
+
+                "phone": "00963963963963"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: SignUp
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      operationId: Login
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+            example:
+              email: test_user@gmail.com
+              password: 123456789new
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/login
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com",
+
+                "password": "123456789new"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Login
+  /auth/check-code-login:
+    post:
+      tags:
+        - Auth
+      summary: Check Code Login
+      operationId: CheckCodeLogin
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CheckCodeLoginRequest"
+            example:
+              email: test_user@gmail.com
+              otpCode: "17741"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/check-code-login
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com",
+
+                "otpCode": "17741"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Check Code Login
+  /auth/check-verify-code:
+    post:
+      tags:
+        - Auth
+      summary: Check Verify Code
+      operationId: CheckVerifyCode
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CheckVerifyCodeRequest"
+            example:
+              email: test_user@gmail.com
+              otpCode: "48241"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/check-verify-code
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com",
+
+                "otpCode": "48241"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Check Verify Code
+  /auth/generate-otp-code:
+    post:
+      tags:
+        - Auth
+      summary: Generate Otp Code
+      operationId: GenerateOtpCode
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateOtpCodeRequest"
+            example:
+              email: test_user@gmail.com
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/generate-otp-code
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Generate Otp Code
+  /auth/otp-change-password:
+    post:
+      tags:
+        - Auth
+      summary: Forget Password Otp
+      operationId: ForgetPasswordOtp
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ForgetPasswordOtpRequest"
+            example:
+              email: test_user@gmail.com
+              otpCode: "48241"
+              newPassword: 123456789new
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/otp-change-password
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "test_user@gmail.com",
+
+                "otpCode": "48241",
+
+                "newPassword": "123456789new"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Forget Password Otp
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      summary: Logout
+      operationId: Logout
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          text/plain:
+            schema:
+              type: object
+              example: {}
+            example: {}
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /auth/logout
+            headers:
+              Content-Type: application/json
+            body: "{}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Logout
+  /profile/profile-me:
+    get:
+      tags:
+        - User In Front
+      summary: Get My Profile
+      operationId: GetMyProfile
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /profile/profile-me
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get My Profile
+    put:
+      tags:
+        - User In Front
+      summary: Update My Profile
+      operationId: UpdateMyProfile
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateMyProfileRequest"
+            example:
+              firstName: test new
+              lastName: user new
+              gender: 60af8d2fee989ddbe8ea5761
+              region: 60c21bdb45e42dc6d2e1fd38
+              birthday: 1997-01-30
+              photo: /images/test_image_new.png
+              phone: 00963963963000
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /profile/profile-me
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "firstName": "test new",
+
+                "lastName": "user new",
+
+                "gender": "60af8d2fee989ddbe8ea5761",
+
+                "region": "60c21bdb45e42dc6d2e1fd38",
+
+                "birthday": "1997-01-30",
+
+                "photo": "/images/test_image_new.png",
+
+                "phone": "00963963963000"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update My Profile
+  /profile/password:
+    put:
+      tags:
+        - User In Front
+      summary: Update My Password
+      operationId: UpdateMyPassword
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateMyPasswordRequest"
+            example:
+              oldPassword: 123456789new
+              newPassword: "123456789"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /profile/password
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "oldPassword": "123456789new",
+
+                "newPassword": "123456789"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update My Password
+  /profile/email/email-generate-code:
+    put:
+      tags:
+        - User In Front
+      summary: Update My Email - Generate Code
+      operationId: UpdateMyEmail-GenerateCode
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateMyEmail-GenerateCodeRequest"
+            example:
+              oldPassword: "123456789"
+              newEmail: test_user_new@gmail.com
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /profile/email/email-generate-code
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "oldPassword": "123456789",
+
+                "newEmail": "test_user_new@gmail.com"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update My Email - Generate Code
+  /profile/email/email-verify:
+    put:
+      tags:
+        - User In Front
+      summary: Update Email - Verify Code
+      operationId: UpdateEmail-VerifyCode
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateEmail-VerifyCodeRequest"
+            example:
+              oldPassword: "123456789"
+              newEmail: test_user_new@gmail.com
+              otpCode: "29340"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /profile/email/email-verify
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "oldPassword": "123456789",
+
+                "newEmail": "test_user_new@gmail.com",
+
+                "otpCode": "29340"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update Email - Verify Code
+  /dashboard/user/create:
+    post:
+      tags:
+        - User In Dashboard
+      summary: Create New User
+      operationId: CreateNewUser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateNewUserRequest"
+            example:
+              email: user_form_dashboard@gmail.com
+              password: "123456789"
+              firstName: test user
+              lastName: dashboard
+              role: 60af8e04e6a76add7c4c1a05
+              gender: 60af8d2fee989ddbe8ea575f
+              region: 60c21bdb45e42dc6d2e1fd3a
+              birthday: 1997-01-01
+              photo: /images/test_user_dashboard_image.png
+              phone: 00963990000000
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /dashboard/user/create
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "email": "user_form_dashboard@gmail.com",
+
+                "password": "123456789",
+
+                "firstName": "test user",
+
+                "lastName": "dashboard",
+
+                "role": "60af8e04e6a76add7c4c1a05",
+
+                "gender": "60af8d2fee989ddbe8ea575f",
+
+                "region": "60c21bdb45e42dc6d2e1fd3a",
+
+                "birthday": "1997-01-01",
+
+                "photo": "/images/test_user_dashboard_image.png",
+
+                "phone": "00963990000000"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create New User
+  /dashboard/user/all:
+    get:
+      tags:
+        - User In Dashboard
+      summary: Get All Users In System
+      operationId: GetAllUsersInSystem
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/user/all
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Users In System
+  /dashboard/user/user-details/60d3857a97cf1a3620d1825f:
+    get:
+      tags:
+        - User In Dashboard
+      summary: Get User By Id
+      operationId: GetUserById
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/user/user-details/60d3857a97cf1a3620d1825f
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get User By Id
+  /dashboard/user/update/email:
+    put:
+      tags:
+        - User In Dashboard
+      summary: Update Email
+      operationId: UpdateEmail
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateEmailRequest"
+            example:
+              userId: 60d3857a97cf1a3620d1825f
+              newEmail: new_user_form_dashboard@gmail.com
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /dashboard/user/update/email
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "userId": "60d3857a97cf1a3620d1825f",
+
+                "newEmail": "new_user_form_dashboard@gmail.com"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update Email
+  /dashboard/user/update/password:
+    put:
+      tags:
+        - User In Dashboard
+      summary: Update Password
+      operationId: UpdatePassword
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatePasswordRequest"
+            example:
+              userId: 60d3857a97cf1a3620d1825f
+              newPassword: 123456789new
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /dashboard/user/update/password
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "userId": "60d3857a97cf1a3620d1825f",
+
+                "newPassword": "123456789new"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update Password
+  /dashboard/user/update/role:
+    put:
+      tags:
+        - User In Dashboard
+      summary: Update Role
+      operationId: UpdateRole
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateRoleRequest"
+            example:
+              userId: 60d3857a97cf1a3620d1825f
+              newRole: 60af8e04e6a76add7c4c1a06
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /dashboard/user/update/role
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "userId": "60d3857a97cf1a3620d1825f",
+
+                "newRole": "60af8e04e6a76add7c4c1a06"
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update Role
+  /dashboard/role:
+    get:
+      tags:
+        - Role
+      summary: Get All Roles In System
+      operationId: GetAllRolesInSystem
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/role
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Roles In System
+  /dashboard/gender:
+    get:
+      tags:
+        - Gender
+      summary: Get All Genders In System
+      operationId: GetAllGendersInSystem
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/gender
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Genders In System
+  /dashboard/province:
+    get:
+      tags:
+        - Province
+      summary: Get All Provinces In System
+      operationId: GetAllProvincesInSystem
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/province
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Provinces In System
+  /dashboard/province/60c21bda45e42dc6d2e1fd28:
+    get:
+      tags:
+        - Province
+      summary: Get All Regions in Province By Id
+      operationId: GetAllRegionsinProvinceById
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /dashboard/province/60c21bda45e42dc6d2e1fd28
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Regions in Province By Id
+  /offer/create:
+    post:
+      tags:
+        - Offer In Front
+      summary: Create New Offer
+      operationId: CreateNewOffer
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateNewOfferRequest"
+            example:
+              description: this is test offer
+              region: 60c21bdb45e42dc6d2e1fd38
+              offerType: 60c2382c4685c087604079d1
+              businessOffer: 60c237cf84302288cc4778ac
+              price: 125000
+              area: 165
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /offer/create
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "description": "this is test offer",
+
+                "region": "60c21bdb45e42dc6d2e1fd38",
+
+                "offerType": "60c2382c4685c087604079d1",
+
+                "businessOffer": "60c237cf84302288cc4778ac",
+
+                "price": 125000,
+
+                "area": 165
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create New Offer
+  /offer/60d38b3797cf1a3620d18297:
+    put:
+      tags:
+        - Offer In Front
+      summary: Update An Offer
+      operationId: UpdateAnOffer
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateAnOfferRequest"
+            example:
+              description: this is test offer after update
+              region: 60c21bdb45e42dc6d2e1fd38
+              offerType: 60c2382c4685c087604079d1
+              businessOffer: 60c237cf84302288cc4778ac
+              price: 125000
+              area: 165
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /offer/60d38b3797cf1a3620d18297
+            headers:
+              Content-Type: application/json
+            body: >-
+              {
+
+                "description": "this is test offer after update",
+
+                "region": "60c21bdb45e42dc6d2e1fd38",
+
+                "offerType": "60c2382c4685c087604079d1",
+
+                "businessOffer": "60c237cf84302288cc4778ac",
+
+                "price": 125000,
+
+                "area": 165
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update An Offer
+    get:
+      tags:
+        - Offer In Front
+      summary: Get Offer By Id
+      operationId: GetOfferById
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /offer/60d38b3797cf1a3620d18297
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get Offer By Id
+    delete:
+      tags:
+        - Offer In Front
+      summary: Delete An Offer
+      operationId: DeleteAnOffer
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /offer/60d38b3797cf1a3620d18297
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Delete An Offer
+  /offer/all:
+    get:
+      tags:
+        - Offer In Front
+      summary: Get All Offers In System
+      operationId: GetAllOffersInSystem
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /offer/all
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get All Offers In System
+  /offer/my-offers:
+    get:
+      tags:
+        - Offer In Front
+      summary: Get My Offers
+      operationId: GetMyOffers
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /offer/my-offers
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get My Offers
+  /offer/save-offers:
+    get:
+      tags:
+        - Offer In Front
+      summary: Get My Saved Offers
+      operationId: GetMySavedOffers
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /offer/save-offers
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get My Saved Offers
+  /offer/like/60d38b3797cf1a3620d18297:
+    put:
+      tags:
+        - Offer In Front
+      summary: Like An Offer
+      operationId: LikeAnOffer
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /offer/like/60d38b3797cf1a3620d18297
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Like An Offer
+  /offer/save/60d38b3797cf1a3620d18297:
+    put:
+      tags:
+        - Offer In Front
+      summary: Save An Offer
+      operationId: SaveAnOffer
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+      x-unitTests:
+        - request:
+            method: PUT
+            uri: /offer/save/60d38b3797cf1a3620d18297
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            statusCode: "200"
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Save An Offer
+components:
+  schemas:
+    SignUpRequest:
+      title: SignUpRequest
+      required:
+        - email
+        - password
+        - firstName
+        - lastName
+        - gender
+        - region
+        - birthday
+        - photo
+        - phone
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        gender:
+          type: string
+        region:
+          type: string
+        birthday:
+          type: string
+        photo:
+          type: string
+        phone:
+          type: string
+      example:
+        email: test_user@gmail.com
+        password: "123456789"
+        firstName: test
+        lastName: user
+        gender: 60af8d2fee989ddbe8ea5761
+        region: 60c21bdb45e42dc6d2e1fd38
+        birthday: 1997-01-01
+        photo: /images/test_image.png
+        phone: 00963963963963
+    LoginRequest:
+      title: LoginRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: test_user@gmail.com
+        password: 123456789new
+    CheckCodeLoginRequest:
+      title: CheckCodeLoginRequest
+      required:
+        - email
+        - otpCode
+      type: object
+      properties:
+        email:
+          type: string
+        otpCode:
+          type: string
+      example:
+        email: test_user@gmail.com
+        otpCode: "17741"
+    CheckVerifyCodeRequest:
+      title: CheckVerifyCodeRequest
+      required:
+        - email
+        - otpCode
+      type: object
+      properties:
+        email:
+          type: string
+        otpCode:
+          type: string
+      example:
+        email: test_user@gmail.com
+        otpCode: "48241"
+    GenerateOtpCodeRequest:
+      title: GenerateOtpCodeRequest
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          type: string
+      example:
+        email: test_user@gmail.com
+    ForgetPasswordOtpRequest:
+      title: ForgetPasswordOtpRequest
+      required:
+        - email
+        - otpCode
+        - newPassword
+      type: object
+      properties:
+        email:
+          type: string
+        otpCode:
+          type: string
+        newPassword:
+          type: string
+      example:
+        email: test_user@gmail.com
+        otpCode: "48241"
+        newPassword: 123456789new
+    UpdateMyProfileRequest:
+      title: UpdateMyProfileRequest
+      required:
+        - firstName
+        - lastName
+        - gender
+        - region
+        - birthday
+        - photo
+        - phone
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        gender:
+          type: string
+        region:
+          type: string
+        birthday:
+          type: string
+        photo:
+          type: string
+        phone:
+          type: string
+      example:
+        firstName: test new
+        lastName: user new
+        gender: 60af8d2fee989ddbe8ea5761
+        region: 60c21bdb45e42dc6d2e1fd38
+        birthday: 1997-01-30
+        photo: /images/test_image_new.png
+        phone: 00963963963000
+    UpdateMyPasswordRequest:
+      title: UpdateMyPasswordRequest
+      required:
+        - oldPassword
+        - newPassword
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+      example:
+        oldPassword: 123456789new
+        newPassword: "123456789"
+    UpdateMyEmail-GenerateCodeRequest:
+      title: UpdateMyEmail-GenerateCodeRequest
+      required:
+        - oldPassword
+        - newEmail
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newEmail:
+          type: string
+      example:
+        oldPassword: "123456789"
+        newEmail: test_user_new@gmail.com
+    UpdateEmail-VerifyCodeRequest:
+      title: UpdateEmail-VerifyCodeRequest
+      required:
+        - oldPassword
+        - newEmail
+        - otpCode
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newEmail:
+          type: string
+        otpCode:
+          type: string
+      example:
+        oldPassword: "123456789"
+        newEmail: test_user_new@gmail.com
+        otpCode: "29340"
+    CreateNewUserRequest:
+      title: CreateNewUserRequest
+      required:
+        - email
+        - password
+        - firstName
+        - lastName
+        - role
+        - gender
+        - region
+        - birthday
+        - photo
+        - phone
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        role:
+          type: string
+        gender:
+          type: string
+        region:
+          type: string
+        birthday:
+          type: string
+        photo:
+          type: string
+        phone:
+          type: string
+      example:
+        email: user_form_dashboard@gmail.com
+        password: "123456789"
+        firstName: test user
+        lastName: dashboard
+        role: 60af8e04e6a76add7c4c1a05
+        gender: 60af8d2fee989ddbe8ea575f
+        region: 60c21bdb45e42dc6d2e1fd3a
+        birthday: 1997-01-01
+        photo: /images/test_user_dashboard_image.png
+        phone: 00963990000000
+    UpdateEmailRequest:
+      title: UpdateEmailRequest
+      required:
+        - userId
+        - newEmail
+      type: object
+      properties:
+        userId:
+          type: string
+        newEmail:
+          type: string
+      example:
+        userId: 60d3857a97cf1a3620d1825f
+        newEmail: new_user_form_dashboard@gmail.com
+    UpdatePasswordRequest:
+      title: UpdatePasswordRequest
+      required:
+        - userId
+        - newPassword
+      type: object
+      properties:
+        userId:
+          type: string
+        newPassword:
+          type: string
+      example:
+        userId: 60d3857a97cf1a3620d1825f
+        newPassword: 123456789new
+    UpdateRoleRequest:
+      title: UpdateRoleRequest
+      required:
+        - userId
+        - newRole
+      type: object
+      properties:
+        userId:
+          type: string
+        newRole:
+          type: string
+      example:
+        userId: 60d3857a97cf1a3620d1825f
+        newRole: 60af8e04e6a76add7c4c1a06
+    CreateNewOfferRequest:
+      title: CreateNewOfferRequest
+      required:
+        - description
+        - region
+        - offerType
+        - businessOffer
+        - price
+        - area
+      type: object
+      properties:
+        description:
+          type: string
+        region:
+          type: string
+        offerType:
+          type: string
+        businessOffer:
+          type: string
+        price:
+          type: integer
+          format: int32
+        area:
+          type: integer
+          format: int32
+      example:
+        description: this is test offer
+        region: 60c21bdb45e42dc6d2e1fd38
+        offerType: 60c2382c4685c087604079d1
+        businessOffer: 60c237cf84302288cc4778ac
+        price: 125000
+        area: 165
+    UpdateAnOfferRequest:
+      title: UpdateAnOfferRequest
+      required:
+        - description
+        - region
+        - offerType
+        - businessOffer
+        - price
+        - area
+      type: object
+      properties:
+        description:
+          type: string
+        region:
+          type: string
+        offerType:
+          type: string
+        businessOffer:
+          type: string
+        price:
+          type: integer
+          format: int32
+        area:
+          type: integer
+          format: int32
+      example:
+        description: this is test offer after update
+        region: 60c21bdb45e42dc6d2e1fd38
+        offerType: 60c2382c4685c087604079d1
+        businessOffer: 60c237cf84302288cc4778ac
+        price: 125000
+        area: 165
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+  - httpBearer: []
+tags:
+  - name: Auth
+  - name: User In Front
+  - name: User In Dashboard
+  - name: Role
+  - name: Gender
+  - name: Province
+  - name: Offer In Front
+    schemas:
+      ErrorResponse:
+        type: object
+        properties:
+          success:
+            type: boolean
+            description: if the request failed
+            example: false
+          error:
+            type: object
+            properties:
+              status:
+                type: string
+                description: "Http Status Code"
+                example: "404"
+              code:
+                type: string
+                description: "Server Error"
+                example: "1000"
+              elements:
+                type: array
+                description: Elements Error
+                items:
+                  type: object
+                  properties:
+                    param:
+                      type: string
+                      description: name felid
+                      example: email
+                    msg:
+                      type: string
+                      description: message error
+                      example: email must be required
+                    location:
+                      type: string
+                      enum:
+                        - body
+                        - query
+                        - params
+                        - cookies
+                        - headers
+                        - payload/body
+                      description: location error
+                      example: body
+
+      SuccessResponse:
+        type: object
+        properties:
+          success:
+            type: boolean
+            description: if the request succeeded
+            example: true
+          result:
+            type: object
+            description: object Of Result
+            example: result{ first_name:string }
+
+      user:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: user id
+            example: 605edb06998b2d1e7c390cad
+          email:
+            type: string
+            format: email
+            description: email of user
+            example: yamen.shama97@gmail.com
+          firstName:
+            type: string
+            description: user first name
+            example: "Yamen"
+          lastName:
+            type: string
+            description: user last name
+            example: "Shamma"
+          phone:
+            type: array
+            description: array of user phone number
+            items:
+              type: string
+              example: "+963937864318"
+          birthday:
+            type: string
+            format: date-time
+            description: user birthday
+            example: "1997-05-14"
+          gender:
+            type: object
+            $ref: "#/components/schemas/gender"
+          region:
+            type: object
+            $ref: "#/components/schemas/region"
+          role:
+            type: object
+            $ref: "#/components/schemas/role"
+          photo:
+            type: string
+            description: path image profile
+            example: images/yy.jpg
+          created_at:
+            type: string
+            format: date-time
+            description: Date create account
+            example: "2021-03-30T00:00:00.000Z"
+            readOnly: true
+
+      offer:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: offer id
+            example: 605edb06998b2d1e7c390cad
+          owner:
+            type: string
+            description: user id
+            example: 605edb06998b2d1e7c390cad
+          description:
+            type: string
+            description: description the offer
+            example: this offer .....
+          price:
+            type: number
+            format: int32
+            description: the offer price
+            example: 1000000
+          area:
+            type: number
+            format: int32
+            description: the offer area
+            example: 100
+          numberOfLikes:
+            type: number
+            format: int32
+            description: the offer area
+            example: 23
+          images:
+            type: array
+            description: array of offer images
+            items:
+              type: string
+              example: [images/yy.jpg, images/zz.jpg]
+          created_at:
+            type: string
+            format: date-time
+            description: Date create offer
+            example: "2021-03-30T00:00:00.000Z"
+            readOnly: true
+          region:
+            type: object
+            $ref: "#/components/schemas/region"
+          offerType:
+            type: object
+            $ref: "#/components/schemas/offerType"
+          businessOffer:
+            type: object
+            $ref: "#/components/schemas/businessOffer"
+      gender:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: gender id
+            example: "605edb06998b2d1e7c390cad"
+          genderKey:
+            type: string
+            enum:
+              - male
+              - female
+              - none
+            example: male
+          genderArabicName:
+            type: string
+            enum:
+              - ذكر
+              - انثى
+              - غير محدد
+            example: ذكر
+          genderEnglishName:
+            type: string
+            enum:
+              - Male
+              - Female
+              - Not Specified
+            example: Male
+
+      region:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: region id
+            example: "605edaebeeaa8d29c8d382ba"
+          regionKey:
+            type: string
+            description: region key name for comparison
+            example: almaza
+          regionArabicName:
+            type: string
+            description: region arabic name
+            example: المزة
+          regionEnglishName:
+            type: string
+            description: region english name
+            example: almaza
+          province:
+            type: object
+            properties:
+              _id:
+                type: string
+                description: province id
+                example: "605edaebeeaa8d29c8d382ba"
+              provinceKey:
+                type: string
+                description: province key name for comparison
+                example: damascus
+              provinceArabicName:
+                type: string
+                description: province arabic name
+                example: دمشق
+              provinceEnglishName:
+                type: string
+                description: province english name
+                example: Damascus
+              phoneCode:
+                type: string
+                description: prefix phone code
+                example: "011"
+
+      businessOffer:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: region id
+            example: "605edaebeeaa8d29c8d382ba"
+          BusinessOfferKey:
+            type: string
+            enum:
+              - sale
+              - rent
+            example: rent
+            description: businessOffer key name for comparison
+          BusinessOfferArabicName:
+            type: string
+            enum:
+              - بيع
+              - إيجار
+            example: إيجار
+            description: businessOffer arabic name
+          BusinessOfferEnglishName:
+            type: string
+            enum:
+              - Sale
+              - Rent
+            example: Rent
+            description: businessOffer english name
+
+      offerType:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: offerType id
+            example: "605edaebeeaa8d29c8d382ba"
+          offerTypeKey:
+            type: string
+            enum:
+              - flat
+              - chalet
+              - villa
+              - basement
+              - office
+              - shop
+              - farm
+              - warehouse
+              - land
+            example: flat
+            description: offerType key name for comparison
+          offerTypeArabicName:
+            type: string
+            enum:
+              - شقة
+              - شاليه
+              - فيلا
+              - قبو
+              - مكتب
+              - محل
+              - مزرعة
+              - مستودع
+              - أرض
+            example: شقة
+            description: offerType arabic name
+          offerTypeEnglishName:
+            type: string
+            enum:
+              - Flat
+              - Chalet
+              - Villa
+              - Basement
+              - Office
+              - Shop
+              - Farm
+              - Warehouse
+              - Land
+            example: Flat
+            description: offerType english name
+      role:
+        type: object
+        properties:
+          _id:
+            type: string
+            description: role id
+            example: "605edaebeeaa8d29c8d382ba"
+          roleKey:
+            type: string
+            enum:
+              - admin
+              - user
+            example: user
+            description: role key name for comparison
+          roleArabicName:
+            type: string
+            enum:
+              - مدير الموقع
+              - مستخدم
+            example: مستخدم
+            description: role arabic name
+          roleEnglishName:
+            type: string
+            enum:
+              - Admin
+              - User
+            example: User
+            description: role english name

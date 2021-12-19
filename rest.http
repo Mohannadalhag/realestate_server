@@ -1,0 +1,450 @@
+###Signup(Register) Route
+POST http://localhost:3002/auth/signup
+Content-Type: application/json
+
+{
+  "email": "yamen.shama976@gmail.com",
+  "password": "12345678",
+  "firstName": "يامن",
+  "lastName": "شما",
+  "gender": "60af89984d50021a345b5434",
+  "region": "60afa466f77e2d172408bab6"
+}
+
+
+###Login Route
+POST http://localhost:3002/auth/login
+Content-Type: application/json
+
+{
+  "email": "yamen.shama975@gmail.com",
+  "password": "12345678"
+}
+
+
+###check code Route
+POST http://localhost:3002/auth/check-code-login
+Content-Type: application/json
+
+{
+  "email": "yamen.shama97@gmail.com",
+  "otpCode": "11017"
+}
+
+###Logout Route
+POST http://localhost:3002/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDkzM2ZlOTNmNTE1YTBjZjVlNWEiLCJyb2xlIjoidXNlciIsImlhdCI6MTYyMTg4NzU1MiwiZXhwIjoxNjI5NjYzNTUyLCJpc3MiOiJyZWFsLWVzdGF0ZS5jb20ifQ.1_n_PS5BWq46Lqa6LVOzHFCzywGxWTp1jDbwA9cnBuM
+Content-Type: application/json
+
+{
+
+}
+
+
+###Generate Verify Code Route
+POST http://localhost:3002/auth/generate-otp-code
+Content-Type: application/json
+
+{
+  "email": "yamen.shama97@gmail.com"
+}
+
+
+###Check Verify Code Route
+POST http://localhost:3002/auth/check-verify-code
+Content-Type: application/json
+
+{
+  "email": "yamen.shama97@gmail.com",
+  "otpCode": "50562"
+}
+
+
+###Forget Password otp
+POST http://localhost:3002/auth/otp-change-password
+Content-Type: application/json
+
+{
+  "email": "yamen.shama97@gmail.com",
+  "otpCode": "50562",
+  "newPassword": "123456789"
+}
+
+
+###Get profile me
+GET http://localhost:3002/profile/profile-me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGI5MzMyMWNkZjZlZTIzZjBlYzk5OWYiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIyNzUwMTg1LCJleHAiOjE2MzA1MjYxODUsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.OCiYUvHywrM2qpxdsvZigE5R9fH6QnNaddjlPlXcmMI
+
+
+
+###Update Profile me Route
+PUT http://localhost:3002/profile/profile-me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIxMTAyZDA1YzNiODA0OTg4NDMwMzgiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIyMjE2ODY2LCJleHAiOjE2Mjk5OTI4NjYsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.A4Om0JLQ0r7r0IO7ZJFXbiO4RhUawnW20wPHItj-COo
+Content-Type: application/json
+
+{
+  "firstName": "5يامن",
+  "lastName": "شما"
+}
+
+
+###Update Password Route
+PUT http://localhost:3002/profile/password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGI5MzMyMWNkZjZlZTIzZjBlYzk5OWYiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIyNzUwMTg1LCJleHAiOjE2MzA1MjYxODUsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.OCiYUvHywrM2qpxdsvZigE5R9fH6QnNaddjlPlXcmMI
+Content-Type: application/json
+
+{
+  "oldPassword": "123456789",
+  "newPassword": "12345678"
+}
+
+
+
+###Update Email info
+PUT http://localhost:3002/profile/email/email-generate-code
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDkzM2ZlOTNmNTE1YTBjZjVlNWEiLCJyb2xlIjoidXNlciIsImlhdCI6MTYyMTg4NzU1MiwiZXhwIjoxNjI5NjYzNTUyLCJpc3MiOiJyZWFsLWVzdGF0ZS5jb20ifQ.1_n_PS5BWq46Lqa6LVOzHFCzywGxWTp1jDbwA9cnBuM
+Content-Type: application/json
+
+{
+  "oldPassword": "12345678",
+  "newEmail": "yamen.shama@gmail.com"
+}
+
+###Update Email 
+PUT http://localhost:3002/profile/email/email-verify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGFjMDkzM2ZlOTNmNTE1YTBjZjVlNWEiLCJyb2xlIjoidXNlciIsImlhdCI6MTYyMTg4NzU1MiwiZXhwIjoxNjI5NjYzNTUyLCJpc3MiOiJyZWFsLWVzdGF0ZS5jb20ifQ.1_n_PS5BWq46Lqa6LVOzHFCzywGxWTp1jDbwA9cnBuM
+Content-Type: application/json
+
+{
+  "oldPassword": "12345678",
+  "newEmail": "yamen.shama@gmail.com",
+  "otpCode": "47149"
+}
+
+
+//-----------------------------------------------
+//----------------- Dashboard -------------------
+
+###Create User Route
+POST http://localhost:3002/dashboard/user/create
+Content-Type: application/json
+
+{
+  "email": "yamen.s55@gmail.com",
+  "password": "12345678",
+  "firstName": "يامن",
+  "lastName": "شما",
+  "role": "60af89cffc46c3302ca77b7d",
+  "gender": "60af89984d50021a345b5434",
+  "region": "60afa466f77e2d172408bab6"
+}
+
+
+###Get All users in my system
+GET http://localhost:3002/dashboard/user/all
+
+### Get User By id
+GET http://localhost:3002/dashboard/user/user-details/60b93321cdf6ee23f0ec999f
+
+###update email 
+PUT http://localhost:3002/dashboard/user/update/email
+Content-Type: application/json
+
+{
+  "userId":"60b93321cdf6ee23f0ec999f",
+  "newEmail": "yamen.s55@gmail.com"
+}
+
+###update password 
+PUT http://localhost:3002/dashboard/user/update/password
+Content-Type: application/json
+
+{
+  "userId":"60b0a2543d2f360a18145807",
+  "newPassword": "12345678"
+}
+
+
+###update role
+PUT http://localhost:3002/dashboard/user/update/role
+Content-Type: application/json
+
+{
+  "userId":"60b0a2543d2f360a18145807",
+  "newRole": "60af89cffc46c3302ca77b7e"
+}
+
+
+
+
+//-----------------------------------------------
+###Get All Role in my systems
+GET http://localhost:3002/dashboard/role
+
+
+###Get All Genders in my systems
+GET http://localhost:3002/dashboard/gender
+
+
+###Get All Provinces in my systems
+GET http://localhost:3002/dashboard/province
+
+
+###Get All Regions by Province id
+GET http://localhost:3002/dashboard/province/60afa466f77e2d172408bab5
+
+//-----------------------------------------------
+
+//----------- Offer -----------------------------
+
+
+###Create offer Route
+POST http://localhost:3008/offer/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+Content-Type: application/json
+
+{
+  "description": "البيت ط ٣ خلفي بطل ع دوار وضع البيت وسط ٣ غرف وصالون مساحة بحدود ١١٠ السعر ٣٢٥ وبازار خفيف ",
+  "region": "60deaffb856fca1a5449cdbd",
+  "offerType": "60dea9bf1a4c4b295859ab42",
+  "businessOffer": "60dea8436c3f541e18e40481",
+  "price": 50000,
+  "area": 6500
+}
+
+
+
+###Update offer Route
+PUT http://localhost:3002/offer/60d1ea1801ac2b2a0b36259d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+Content-Type: application/json
+
+{
+  "description": "البيت ط ٣ خلفي بطل ع دوار وضع البيت وسط ٣ غرف وصالون مساحة بحدود ١١٠ السعر ٣٢٥ وبازار خفيف",
+  "region": "60cca9b81d59c232307b2f9b",
+  "offerType": "60d122baff42ce2752271eaa",
+  "businessOffer": "60d12337f7cc81277b779906",
+  "price": 3000000,
+  "area": 300
+}
+
+
+
+###Get List Of offers Route
+GET http://localhost:3002/offer/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+
+
+###Get offer by id Route
+GET http://localhost:3002/offer/60c1fdfabd86e318d8cf723b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+
+
+###Get my offers Route
+GET http://localhost:3002/offer/my-offers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+
+
+###Get save offers Route
+GET http://localhost:3002/offer/save-offers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGRhMGIyYmIwYjcwNzdlZDQyYTE3OTEiLCJyb2xlIjpudWxsLCJpYXQiOjE2MjU0NDQwNzcsImV4cCI6MTYzMzIyMDA3NywiaXNzIjoicmVhbC1lc3RhdGUuY29tIn0.ryQB7GAbhYibEm36YTt311kr10p0iLg0x-9yytoT-do
+
+
+###Like an offer Route
+PUT http://localhost:3002/offer/like/60cca67bf9b4090be4093081
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+
+
+###Save an offer Route
+PUT http://localhost:3002/offer/save/60c23d549bbde7380ca7366f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxZmI3OGI1YmQ3MzI1MzRlNTA5MzIiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIzMzI1NTgzLCJleHAiOjE2MzExMDE1ODMsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.EpardTy8hFA_FtRKXPbyWp_15lXz8nsJxf5xRoGQHuk
+
+
+
+###Delete offer Route
+DELETE http://localhost:3002/offer/60c1a398a808ec4104be9c4b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGI5NDQzNjEwMjFhNTM3MDg1ZThmNzkiLCJyb2xlIjp7Il9pZCI6IjYwYWY4OWNmZmM0NmMzMzAyY2E3N2I3ZSIsInJvbGVLZXkiOiJ1c2VyIiwicm9sZUVuZ2xpc2hOYW1lIjoiVXNlciIsInJvbGVBcmFiaWNOYW1lIjoi2YXYs9iq2K7Yr9mFIiwiX192IjowfSwiaWF0IjoxNjIyODIxMzU2LCJleHAiOjE2MzA1OTczNTYsImlzcyI6InJlYWwtZXN0YXRlLmNvbSJ9.qrge-DQVPhChuT4H9Q5t8Fif_XtreTd8uRnntXMZeF8
+Content-Type: application/json
+
+
+
+
+//-----------------------------------------------
+
+###
+GET http://localhost:3002
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjEyMTQ1OTYsImV4cCI6MTYyMTIxODE5NiwiYXVkIjoiNjBhMWM0OTAxOGE2ZWMwNzg4Mjc0YjdkIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.CZRW-8HEBJ8x4uTpEqqJh_lGX7QtUo_jfE_8Ijbb_a4
+
+
+ 
+###build index
+GET http://localhost:3008/index/build
+Content-Type: application/json
+
+###build vector
+GET http://localhost:3008/index/vector
+Content-Type: application/json
+
+###search query
+GET http://localhost:3002/index/search
+Content-Type: application/json
+
+
+###Get a list of all Offers
+GET http://localhost:3002/offer
+
+###Create a new Offer
+POST http://localhost:3002/offer
+Content-Type: application/json
+
+{
+  "Description": "بناء",
+  "Title": "بناء",
+  "Province": "دمشق",
+  "Region": "دمشق",
+  "RealEstateType" : "حكم محكمة",
+  "OfferType": "بيت",
+  "Price": 1
+}
+
+###Get a Offer by id
+GET http://localhost:3002/offer/602a3ee02b471f21cc528cc8
+
+###Update a Offer by id
+PATCH http://localhost:3002/offer/60d1239729008626e40adacc
+Content-Type: application/json
+
+{
+  "description": "description1 Updated",
+  "province": "province1",
+  "region": "region1",
+  "real_estate_type" : "real_estate_type1",
+  "offer_type": "offer_type1",
+  "price": 1
+}
+
+###Get a Offer by id
+DELETE http://localhost:3002/offer/602a4025bc19632fb8edcabe
+
+
+
+
+
+###Get a list of all StaticValues
+GET http://localhost:3002/staticvalues
+
+
+###Get a list of all KeyWords
+GET http://localhost:3002/keywords
+
+
+
+
+
+###Get a list of all Offers
+GET http://localhost:3002/offer
+
+######Get a User by id
+GET http://localhost:3002/user/602ce649f70b192bb0510118
+
+###Update a User by id
+PATCH http://localhost:3002/user/602cf85c8cb7170ee8fbab57
+Content-Type: application/json
+
+{
+  "email": "yamen4466.shama97@gmail.com",
+  "password": "1234",
+  "first_name": "5يامن بعد التعديل",
+  "last_name": "شما",
+  "gender": "ذكر",
+  "birthdate": "1997-5-14",
+  "province": "ريف دمشق",
+  "photo": "صورة",
+  "username": "YamenShamma",
+  "phone": "0937864318",
+  "isActive": "true",
+  "expierDate":"1/1/2022",
+  "role": "Admin",
+  "eval": 5
+}
+
+###Delete a user by id
+DELETE http://localhost:3002/user/602cf41e7ef7c2152c97a761
+
+
+
+###Create a new Offer
+POST http://www.ikar.sy/ikar_api/v1/properties/search?per_page=12&page=19
+Content-Type: application/json
+
+{"visible": "true",
+ "order": {"created_at": "desc"}, 
+ "temp_status": "عادي"}
+
+
+
+###
+POST http://localhost:8080
+Content-Type: application/json
+
+{  
+  "offers":
+  [
+  {
+    "token": "المنزل",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المنزل",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المنزل",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "واقع",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "واقع",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "القارات",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "الثلاثة",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "ومطل",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "البحر",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "الأبيض",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المتوسط",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المتوسط",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المتوسط",
+    "offerId": "60d1239729008626e40adacc"
+  },
+  {
+    "token": "المتوسط",
+    "offerId": "60d1239729008626e40adacc"
+  }
+]
+}
